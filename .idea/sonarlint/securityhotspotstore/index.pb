@@ -3,3 +3,15 @@
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 w
 Gsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/FinalTest.java,a/5/a53382fb3b15002f786178dd1571d82b0ac20ae6
+{
+Ksrc/test/java/com/autw/autw_luonghuunhan_finalassignment/core/basePage.java,6/2/62702f59325cc0f3a4ef2b58b3615fab5b843eae
+{
+Ksrc/test/java/com/autw/autw_luonghuunhan_finalassignment/core/baseTest.java,1/9/19de3dc02d4f1518554224851d6d36493a069c5a
+‡
+Wsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/functions/common_function.java,2/9/2911971c6278ffa2b837afc0b06f7c2177eb3b74
+†
+Vsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/functions/login_function.java,c/5/c55b196cda5396519574ffab5d81657422871c3f
+‚
+Rsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/pages/dashboard_page.java,7/2/72481aa691c983ba724f676d43a58088e205e75d
+~
+Nsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/pages/login_page.java,a/0/a0078c28d375235deb15b15a1fb3f32867bff5d0
