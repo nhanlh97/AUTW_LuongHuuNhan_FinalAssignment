@@ -11,7 +11,7 @@ public class baseTest {
     @BeforeMethod
     public void setup(){
         driver = new ChromeDriver();
-        driver.get("http://www.automationpractice.pl/index.php?controller=authentication&amp;back=my-account");
+        driver.get("http://demo-acm-2.bird.eu/admin");
 
     }
     @AfterMethod
