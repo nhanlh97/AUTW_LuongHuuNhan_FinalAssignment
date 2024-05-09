@@ -1,18 +1,27 @@
 package com.autw.autw_luonghuunhan_finalassignment.core;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class ExcelUtil {
     private static XSSFSheet ExcelSheet;
     private static XSSFWorkbook xssfWorkbook;
+    public static HSSFWorkbook workbook;
+    public static HSSFSheet sheet;
+    public static Map<String, Object[]> testResult;
 
     public static Object[][] getTableArray(String FilePath, String SheetName, int startCol, int totalCols) {
         String[][] tabArray = null;
@@ -54,39 +63,46 @@ public class ExcelUtil {
             throw e;
         }
     }
+    public static void writeHeadingExcelFile(String sheetName){
+        workbook = new HSSFWorkbook();
+        sheet = workbook.createSheet(sheetName);
+        testResult = new LinkedHashMap<String, Object[]>();
+        testResult.put("1", new Object[]{"Testcase_No", "Testcase_Name", "Expected_Result", "Actual_Result"});
+    }
 
-    public static void writeHeadingExcelFile() throws IOException{
-        XSSFWorkbook xssfWorkbook2 = new XSSFWorkbook();
-        XSSFSheet xssfSheet = xssfWorkbook2.createSheet("Test result");
-        Row row = xssfSheet.createRow(0);
-        xssfSheet.setColumnWidth(0,16900);
-        row.createCell(0).setCellValue("Test case");
-        row.createCell(1).setCellValue("Result");
+
+    public static void writeDataToExcelFile(String path){
+        Set<String> keyset = testResult.keySet();
+        int rownum = 0;
+        for (String key : keyset) {
+            Row row = sheet.createRow(rownum++);
+            Object[] objArr = testResult.get(key);
+            int cellnum = 0;
+            for (Object obj : objArr) {
+                Cell cell = row.createCell(cellnum++);
+                if ((obj instanceof Date))
+                    cell.setCellValue((RichTextString) obj);
+                else if (obj instanceof Boolean)
+                    cell.setCellValue((Boolean) obj);
+                else if (obj instanceof String)
+                    cell.setCellValue((String) obj);
+                else if (obj instanceof Double)
+                    cell.setCellValue((Double) obj);
+            }
+        }
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("src/testResult.xlsx");
-            xssfWorkbook2.write(fileOutputStream);
-            fileOutputStream.close();
-            System.out.println("Success!");
+            java.util.Date date = new java.util.Date();
+            FileOutputStream out = new FileOutputStream(new File(path + date.getTime() + ".xls"));
+            workbook.write(out);
+            out.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    public static void writeData(String row, String testNo, String testName, String expect, String actual){
+        testResult.put(row, new Object[]{testNo, testName, expect, actual});
 
-    public static void writeAppendExcelFile(String testcase, String result) throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("src/test/account.xlsx");
-        XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fileInputStream);
-        XSSFSheet xssfSheet = xssfWorkbook.getSheet("Test result");
-        int lastRow = xssfSheet.getLastRowNum();
-        Row row = xssfSheet.createRow(lastRow+1);
-        row.createCell(0).setCellValue(testcase);
-        row.createCell(1).setCellValue(result);
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream("src/testResult.xlsx");
-            xssfWorkbook.write(fileOutputStream);
-            fileOutputStream.close();
-            System.out.println("Success!");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

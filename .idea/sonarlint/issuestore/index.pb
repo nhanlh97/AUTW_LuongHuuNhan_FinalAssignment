@@ -21,3 +21,5 @@ Lsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/core/ExcelUtil.java,f
 Msrc/test/java/com/autw/autw_luonghuunhan_finalassignment/pages/home_page.java,8/5/85ffcae2314e675fa1a7e726286e953a3066b1e2
 {
 Ksrc/test/java/com/autw/autw_luonghuunhan_finalassignment/core/TextUtil.java,b/6/b63b0a9409e88068ea90ed5f6c5adc40c29c98df
+Š
+Zsrc/test/java/com/autw/autw_luonghuunhan_finalassignment/functions/dashboard_function.java,1/0/102e4476de2916cb6217daee97b49930c78f9988
