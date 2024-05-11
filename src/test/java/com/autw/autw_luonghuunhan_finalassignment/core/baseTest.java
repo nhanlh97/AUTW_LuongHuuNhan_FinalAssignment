@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
 public class baseTest {
+
     public WebDriver driver;
 
     @BeforeMethod
@@ -20,7 +21,7 @@ public class baseTest {
 
     @AfterMethod
     public void tearDown() {
-        ExcelUtil.writeDataToExcelFile("src/Source/accountData.xlsx");
+        ExcelUtil.writeDataToExcelFile("src/test/resources/AssignmentFinalTest.xlsx");
         driver.close();
     }
 }

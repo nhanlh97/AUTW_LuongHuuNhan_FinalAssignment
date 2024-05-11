@@ -26,4 +26,21 @@ public class login_function extends basePage {
         commonFunction.isdisplayed(loginPage.signINBtn);
         commonFunction.isdisplayed(loginPage.forgotYourPassword);
     }
+
+    public void verifyLoginSuccess(String value) {
+        dashboard_function.checkTitle(value);
+    }
+
+    public void add(String firstName, String lastName, String email) {
+        common_function.clickToElement(loginPage.customer);
+        common_function.clickToElement(loginPage.allCustomer);
+        common_function.clickToElement(loginPage.addNewCustomer);
+        common_function.driver.navigate().refresh();
+        common_function.sendKeys(loginPage.firstName, firstName);
+        common_function.sendKeys(loginPage.lastName, lastName);
+        common_function.sendKeys(loginPage.email, email);
+        common_function.clickToElement(loginPage.SaveCustomer);
+        common_function.verifyMessage(loginPage.message,"You saved the customer.");
+
+    }
 }
