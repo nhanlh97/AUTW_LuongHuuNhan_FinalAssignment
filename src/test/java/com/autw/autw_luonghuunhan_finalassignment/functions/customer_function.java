@@ -5,6 +5,7 @@ import com.autw.autw_luonghuunhan_finalassignment.pages.login_page;
 import org.openqa.selenium.WebDriver;
 
 public class customer_function extends basePage {
+
     public customer_function(WebDriver driver) {
         super(driver);
     }

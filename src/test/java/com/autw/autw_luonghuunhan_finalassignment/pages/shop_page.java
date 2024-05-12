@@ -3,6 +3,7 @@ package com.autw.autw_luonghuunhan_finalassignment.pages;
 import org.openqa.selenium.By;
 
 public class shop_page {
+
     public By store = By.xpath("//nav[@class='admin__menu']/ul/li[5]/a");
 
     public By product = By.xpath("//li[@class='item-catalog-attributes-attributes    level-2']/a/span");

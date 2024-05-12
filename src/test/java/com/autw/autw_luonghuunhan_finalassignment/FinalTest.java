@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class FinalTest extends baseTest{
+
     @DataProvider
     public  static Object[][] getAccountData(){
         String path = "src/test/resources/AssignmentFinalTest.xlsx";
@@ -94,7 +95,7 @@ public class FinalTest extends baseTest{
         loginFunctions.login(user,pass);
 
         shop_function storeFunctions = new shop_function(driver);
-        storeFunctions.storeProduct();
+        storeFunctions.shopProduct1();
     }
     @Test(dataProvider = "getAccountData")
     public void tc08_VerifyAddNewProductAttributesPage (String user, String pass){
@@ -102,8 +103,8 @@ public class FinalTest extends baseTest{
         loginFunctions.login(user,pass);
 
         shop_function storeFunctions = new shop_function(driver);
-        storeFunctions.storeProduct1();
-        storeFunctions.storeProduct2();
+        storeFunctions.shopProduct2();
+        storeFunctions.shopProduct3();
     }
 
     @Test(dataProvider = "getAccountData")
@@ -112,7 +113,7 @@ public class FinalTest extends baseTest{
         loginFunctions.login(user,pass);
 
         shop_function storeFunctions = new shop_function(driver);
-        storeFunctions.storeProduct3();
+        storeFunctions.shopProduct4();
 
     }
 
@@ -122,7 +123,7 @@ public class FinalTest extends baseTest{
         loginFunctions.login(user,pass);
 
         shop_function storeFunctions = new shop_function(driver);
-        storeFunctions.storeProduct4();
+        storeFunctions.shopProduct5();
 
     }
 }

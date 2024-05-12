@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class login_page extends basePage {
+
     public By username = By.name("login[username]");
 
     public By password = By.name("login[password]");

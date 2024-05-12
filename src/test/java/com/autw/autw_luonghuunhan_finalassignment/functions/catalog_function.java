@@ -5,6 +5,7 @@ import com.autw.autw_luonghuunhan_finalassignment.pages.catalog_page;
 import org.openqa.selenium.WebDriver;
 
 public class catalog_function extends basePage {
+
     public catalog_function(WebDriver driver) {
         super(driver);
     }

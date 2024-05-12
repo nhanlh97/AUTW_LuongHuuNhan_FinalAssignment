@@ -5,13 +5,14 @@ import com.autw.autw_luonghuunhan_finalassignment.pages.shop_page;
 import org.openqa.selenium.WebDriver;
 
 public class shop_function extends basePage {
+
     public shop_function(WebDriver driver) {
         super(driver);
     }
 
     shop_page storePage = new shop_page();
 
-    public void storeProduct() {
+    public void shopProduct1() {
         common_function.clickToElement(storePage.store);
         common_function.clickToElement(storePage.product);
         common_function.isdisplayed(storePage.addNewAttributeBtn);
@@ -21,7 +22,7 @@ public class shop_function extends basePage {
         common_function.isdisplayed(storePage.productAttributeTable20rows);
     }
 
-    public void storeProduct1() {
+    public void shopProduct2() {
         common_function.clickToElement(storePage.store);
         common_function.clickToElement(storePage.product);
         common_function.clickToElement(storePage.addNewAttributeBtn);
@@ -29,7 +30,7 @@ public class shop_function extends basePage {
         common_function.isdisplayed(storePage.catalogInputTypeForStoreOwnerCombobox);
         common_function.isdisplayed(storePage.valuesRequiredCombobox);
     }
-    public void storeProduct2() {
+    public void shopProduct3() {
         common_function.clickToElement(storePage.advancedAttributeProperties);
         common_function.isdisplayed(storePage.attributeCode);
         common_function.isdisplayed(storePage.scope);
@@ -40,7 +41,7 @@ public class shop_function extends basePage {
         common_function.isdisplayed(storePage.useInFilterOptions);
     }
 
-    public void storeProduct3() {
+    public void shopProduct4() {
         common_function.clickToElement(storePage.store);
         common_function.clickToElement(storePage.product);
         common_function.clickToElement(storePage.addNewAttributeBtn);
@@ -49,7 +50,7 @@ public class shop_function extends basePage {
         common_function.verifyMessage(storePage.message,"You saved the product attribute.");
     }
 
-    public void storeProduct4(){
+    public void shopProduct5(){
         common_function.clickToElement(storePage.store);
         common_function.clickToElement(storePage.product);
         common_function.sendKeysEnter(storePage.attributeCode,"color");
